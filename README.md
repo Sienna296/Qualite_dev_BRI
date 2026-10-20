@@ -1,7 +1,6 @@
 
 # Plateforme de Services Dynamiques BRi
 
-[![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Client--Serveur-blue?style=for-the-badge)](#)
 [![Module](https://img.shields.io/badge/R5A08-Qualit%C3%A9_de_d%C3%A9veloppement-green?style=for-the-badge)](#)
 
