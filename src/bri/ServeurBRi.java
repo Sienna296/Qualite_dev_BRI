@@ -25,7 +25,7 @@ public class ServeurBRi implements Runnable, Closeable {
                 new Thread(fabrique.apply(client)).start();
             }
         } catch (IOException e) {
-            if (!serveur.isClosed()) System.err.println("Serveur arrêté : " + e.getMessage());
+            if (!serveur.isClosed()) System.err.println("Serveur arrete : " + e.getMessage());
         }
     }
 

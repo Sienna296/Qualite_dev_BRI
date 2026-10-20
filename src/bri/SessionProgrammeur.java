@@ -9,9 +9,9 @@ public class SessionProgrammeur implements Runnable {
             + "1 - Fournir un nouveau service\n"
             + "2 - Mettre à jour un service\n"
             + "3 - Changer l'adresse de mon serveur ftp\n"
-            + "4 - Démarrer un service\n"
-            + "5 - Arrêter un service\n"
-            + "6 - Désinstaller un service\n"
+            + "4 - Demarrer un service\n"
+            + "5 - Arreter un service\n"
+            + "6 - Desinstaller un service\n"
             + "0 - Quitter";
 
     private final Socket socket;
@@ -36,7 +36,7 @@ public class SessionProgrammeur implements Runnable {
     }
 
     private Programmeur authentifier(Echange e) throws IOException {
-        e.dire("=== BRiLaunch : espace programmeur ===\n1 - Se connecter\n2 - Créer un compte");
+        e.dire("=== BRiLaunch : espace programmeur ===\n1 - Se connecter\n2 - Creer un compte");
         String choix = e.demander("Votre choix :");
         String login = e.demander("Login :");
         String mdp = e.demander("Mot de passe :");
@@ -66,33 +66,33 @@ public class SessionProgrammeur implements Runnable {
                     case "1": {
                         String nom = e.demander("Nom de la classe (sans package) :");
                         registry.installer(ChargeurService.charger(p, nom));
-                        e.dire("Service installé et démarré.");
+                        e.dire("Service installe et demarre.");
                         break;
                     }
                     case "2": {
-                        String nom = e.demander("Nom de la classe à mettre à jour :");
+                        String nom = e.demander("Nom de la classe a mettre à jour :");
                         registry.mettreAJour(ChargeurService.charger(p, nom));
                         e.dire("Service mis à jour.");
                         break;
                     }
                     case "3": {
                         p.setFtpUrl(e.demander("Nouvelle URL ftp :"));
-                        e.dire("Adresse ftp modifiée.");
+                        e.dire("Adresse ftp modifiee.");
                         break;
                     }
                     case "4": {
                         registry.demarrer(ChargeurService.nomComplet(p.getLogin(), e.demander("Nom du service :")), p.getLogin());
-                        e.dire("Service démarré.");
+                        e.dire("Service démarre.");
                         break;
                     }
                     case "5": {
                         registry.arreter(ChargeurService.nomComplet(p.getLogin(), e.demander("Nom du service :")), p.getLogin());
-                        e.dire("Service arrêté.");
+                        e.dire("Service arrete.");
                         break;
                     }
                     case "6": {
                         registry.desinstaller(ChargeurService.nomComplet(p.getLogin(), e.demander("Nom du service :")), p.getLogin());
-                        e.dire("Service désinstallé.");
+                        e.dire("Service desinstalle.");
                         break;
                     }
                     case "0":
